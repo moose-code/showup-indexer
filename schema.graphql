@@ -1,0 +1,85 @@
+type EventsSummary {
+  id: ID!
+  canceled: [Canceled!]! @derivedFrom(field: "eventsSummary")
+  canceledsCount: BigInt!
+  checkedIn: [CheckedIn!]! @derivedFrom(field: "eventsSummary")
+  checkedInsCount: BigInt!
+  conditionModuleWhitelisted: [ConditionModuleWhitelisted!]!
+    @derivedFrom(field: "eventsSummary")
+  conditionModuleWhitelistedsCount: BigInt!
+  created: [Created!]! @derivedFrom(field: "eventsSummary")
+  createdsCount: BigInt!
+  ownershipTransferred: [OwnershipTransferred!]!
+    @derivedFrom(field: "eventsSummary")
+  ownershipTransferredsCount: BigInt!
+  registered: [Registered!]! @derivedFrom(field: "eventsSummary")
+  registeredsCount: BigInt!
+  settled: [Settled!]! @derivedFrom(field: "eventsSummary")
+  settledsCount: BigInt!
+}
+
+type Canceled {
+  id: ID!
+  eventId: BigInt!
+  reason: String!
+  data: String!
+  sender: String!
+  timestamp: BigInt!
+  eventsSummary: String!
+}
+
+type CheckedIn {
+  id: ID!
+  eventId: BigInt!
+  attendees: [String!]!
+  data: String!
+  sender: String!
+  timestamp: BigInt!
+  eventsSummary: String!
+}
+
+type ConditionModuleWhitelisted {
+  id: ID!
+  conditionModule: String!
+  whitelisted: Boolean!
+  sender: String!
+  timestamp: BigInt!
+  eventsSummary: String!
+}
+
+type Created {
+  id: ID!
+  eventId: BigInt!
+  contentUri: String!
+  conditionModule: String!
+  data: String!
+  sender: String!
+  timestamp: BigInt!
+  eventsSummary: String!
+}
+
+type OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+
+type Registered {
+  id: ID!
+  eventId: BigInt!
+  participant: String!
+  data: String!
+  sender: String!
+  timestamp: BigInt!
+  eventsSummary: String!
+}
+
+type Settled {
+  id: ID!
+  eventId: BigInt!
+  data: String!
+  sender: String!
+  timestamp: BigInt!
+  eventsSummary: String!
+}

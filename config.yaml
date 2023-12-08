@@ -1,0 +1,31 @@
+name: showup
+networks:
+- id: 10
+  start_block: 0
+  contracts:
+  - name: Registry
+    address:
+    - 0x7Cc8E0633021b9DF8D2F01d9287C3b8e29f4eDe2
+    handler: src/EventHandlers.ts
+    events:
+    - event: Canceled(uint256 indexed id, string reason, bytes data, address sender, uint256 timestamp)
+      requiredEntities:
+      - name: EventsSummary
+    - event: CheckedIn(uint256 indexed id, address[] attendees, bytes data, address sender, uint256 timestamp)
+      requiredEntities:
+      - name: EventsSummary
+    - event: ConditionModuleWhitelisted(address indexed conditionModule, bool indexed whitelisted, address sender, uint256 timestamp)
+      requiredEntities:
+      - name: EventsSummary
+    - event: Created(uint256 indexed id, string contentUri, address indexed conditionModule, bytes data, address sender, uint256 timestamp)
+      requiredEntities:
+      - name: EventsSummary
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+      requiredEntities:
+      - name: EventsSummary
+    - event: Registered(uint256 indexed id, address indexed participant, bytes data, address sender, uint256 timestamp)
+      requiredEntities:
+      - name: EventsSummary
+    - event: Settled(uint256 indexed id, bytes data, address sender, uint256 timestamp)
+      requiredEntities:
+      - name: EventsSummary
