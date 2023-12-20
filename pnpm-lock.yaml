@@ -8,9 +8,12 @@ importers:
 
   .:
     dependencies:
+      add:
+        specifier: ^2.0.6
+        version: 2.0.6
       envio:
-        specifier: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
-        version: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
+        specifier: 0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8
+        version: 0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@20.8.8)(typescript@5.2.2)
@@ -249,6 +252,10 @@ packages:
     hasBin: true
     dev: false
 
+  /add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
+    dev: false
+
   /aes-js@4.0.0-beta.5:
     resolution: {integrity: sha512-G965FqalsNyrPqgEGON7nIx1e/OVENSgiEIzyC63haUMuvNnwIgIjMs52hlTCKhkBny7A2ORNlfY9Zu+jmGk1Q==}
     dev: false
@@ -457,28 +464,28 @@ packages:
       once: 1.4.0
     dev: false
 
-  /envio-darwin-arm64@0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d:
-    resolution: {integrity: sha512-c8e09/iy6QrYW57pWnfdy36IjQBxXnzF0CwMdmjcsHMVlnw42VVmAeTB7/mGWzw4IVR+tFMJ+ahtP/ibzGWOBw==}
+  /envio-darwin-arm64@0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8:
+    resolution: {integrity: sha512-lhVAKZB7xmvMvR+MMiRdutUCJdDQoA6Viv9b2LroB9QutWF892rE9IxnS2+aaCYY0Dmuzsy1afW3OgSGmaUF/w==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /envio-linux-x64@0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d:
-    resolution: {integrity: sha512-ROOfN7lzdvk+KscUEdMn1er3JeRHXpnsUliW8Bqx9Nasj5r7p4TABEA2b3ljEyLdiAwHWhzGyw4Na4AdnS3+ag==}
+  /envio-linux-x64@0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8:
+    resolution: {integrity: sha512-8aEdPC0Nrja5vAu8lbVm4tGB2bkuF/vKgJQSRMGnyvgdbkUpD2J12W4smhlLHqQnN+OlYO1LLd8YRjDX8nUxcQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /envio@0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d:
-    resolution: {integrity: sha512-GLnH4dBotdFw9JqRfSbSx1c8O1lS2z4zJudux5ayLdO28d5yYHkQr7NO1Fy5udpAGxURVJbDJixYKy5PetehFQ==}
+  /envio@0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8:
+    resolution: {integrity: sha512-2QwRulyBsqtJqCvg32vmWvXeHuR8FdhAhH/FN09TuMCDzE7LXMzvcTU2h7U0b8gMeo6BhuftJ10Qfyj8JyKMFQ==}
     hasBin: true
     optionalDependencies:
-      envio-darwin-arm64: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
-      envio-linux-x64: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
+      envio-darwin-arm64: 0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8
+      envio-linux-x64: 0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8
     dev: false
 
   /escalade@3.1.1:

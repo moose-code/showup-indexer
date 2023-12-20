@@ -11,11 +11,12 @@
   },
   "devDependencies": {
     "@types/node": "20.8.8",
-    "typescript": "5.2.2",
-    "rescript": "10.1.4"
+    "rescript": "10.1.4",
+    "typescript": "5.2.2"
   },
   "dependencies": {
-    "ts-node": "10.9.1",
-    "envio": "0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d"
+    "add": "^2.0.6",
+    "envio": "0.0.0-force-npm-publish-loaderless-mode-20231220171223-3d8681f8",
+    "ts-node": "10.9.1"
   }
 }

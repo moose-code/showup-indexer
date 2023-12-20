@@ -2,19 +2,12 @@
  *Please refer to https://docs.envio.dev for a thorough guide on all Envio indexer features*
  */
 import {
-  RegistryContract_Canceled_loader,
   RegistryContract_Canceled_handlerAsync,
-  RegistryContract_CheckedIn_loader,
   RegistryContract_CheckedIn_handlerAsync,
-  RegistryContract_ConditionModuleWhitelisted_loader,
   RegistryContract_ConditionModuleWhitelisted_handlerAsync,
-  RegistryContract_Created_loader,
   RegistryContract_Created_handlerAsync,
-  RegistryContract_OwnershipTransferred_loader,
   RegistryContract_OwnershipTransferred_handlerAsync,
-  RegistryContract_Registered_loader,
   RegistryContract_Registered_handlerAsync,
-  RegistryContract_Settled_loader,
   RegistryContract_Settled_handlerAsync,
 } from "../generated/src/Handlers.gen";
 
@@ -42,16 +35,12 @@ const INITIAL_EVENTS_SUMMARY: EventsSummaryEntity = {
   settledsCount: BigInt(0),
 };
 
-RegistryContract_Canceled_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 RegistryContract_Canceled_handlerAsync(async ({ event, context }) => {
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
@@ -61,9 +50,9 @@ RegistryContract_Canceled_handlerAsync(async ({ event, context }) => {
     canceledsCount: currentSummaryEntity.canceledsCount + BigInt(1),
   };
 
-  context.log.info("sleeping for 10 seconds to test async code!")
-  await sleep(10000)
-  context.log.info("FINISHED: sleeping for 10 seconds to test async code!")
+  context.log.info("sleeping for 1 seconds to test async code!")
+  await sleep(1000)
+  context.log.info("FINISHED: sleeping for 1 seconds to test async code!")
 
   let canceledEntity: CanceledEntity = {
     id: event.transactionHash + event.logIndex.toString(),
@@ -79,16 +68,12 @@ RegistryContract_Canceled_handlerAsync(async ({ event, context }) => {
   context.Canceled.set(canceledEntity);
 });
 
-RegistryContract_CheckedIn_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 RegistryContract_CheckedIn_handlerAsync(async ({ event, context }) => {
-  context.log.info("sleeping for 10 seconds to test async code!")
-  await sleep(10000)
-  context.log.info("FINISHED: sleeping for 10 seconds to test async code!")
+  context.log.info("sleeping for 1 seconds to test async code!")
+  await sleep(1000)
+  context.log.info("FINISHED: sleeping for 1 seconds to test async code!")
 
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
@@ -112,16 +97,12 @@ RegistryContract_CheckedIn_handlerAsync(async ({ event, context }) => {
   context.CheckedIn.set(checkedInEntity);
 });
 
-RegistryContract_ConditionModuleWhitelisted_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 RegistryContract_ConditionModuleWhitelisted_handlerAsync(async ({ event, context }) => {
-  context.log.info("sleeping for 10 seconds to test async code!")
-  await sleep(10000)
-  context.log.info("FINISHED: sleeping for 10 seconds to test async code!")
+  context.log.info("sleeping for 1 seconds to test async code!")
+  await sleep(1000)
+  context.log.info("FINISHED: sleeping for 1 seconds to test async code!")
 
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
@@ -145,16 +126,12 @@ RegistryContract_ConditionModuleWhitelisted_handlerAsync(async ({ event, context
   context.ConditionModuleWhitelisted.set(conditionModuleWhitelistedEntity);
 });
 
-RegistryContract_Created_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 RegistryContract_Created_handlerAsync(async ({ event, context }) => {
-  context.log.info("sleeping for 10 seconds to test async code!")
-  await sleep(10000)
-  context.log.info("FINISHED: sleeping for 10 seconds to test async code!")
+  context.log.info("sleeping for 1 seconds to test async code!")
+  await sleep(1000)
+  context.log.info("FINISHED: sleeping for 1 seconds to test async code!")
 
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
@@ -179,16 +156,12 @@ RegistryContract_Created_handlerAsync(async ({ event, context }) => {
   context.Created.set(createdEntity);
 });
 
-RegistryContract_OwnershipTransferred_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 RegistryContract_OwnershipTransferred_handlerAsync(async ({ event, context }) => {
-  context.log.info("sleeping for 10 seconds to test async code!")
-  await sleep(10000)
-  context.log.info("FINISHED: sleeping for 10 seconds to test async code!")
+  context.log.info("sleeping for 1 seconds to test async code!")
+  await sleep(1000)
+  context.log.info("FINISHED: sleeping for 1 seconds to test async code!")
 
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
@@ -210,16 +183,12 @@ RegistryContract_OwnershipTransferred_handlerAsync(async ({ event, context }) =>
   context.OwnershipTransferred.set(ownershipTransferredEntity);
 });
 
-RegistryContract_Registered_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 RegistryContract_Registered_handlerAsync(async ({ event, context }) => {
-  context.log.info("sleeping for 10 seconds to test async code!")
-  await sleep(10000)
-  context.log.info("FINISHED: sleeping for 10 seconds to test async code!")
+  context.log.info("sleeping for 1 seconds to test async code!")
+  await sleep(1000)
+  context.log.info("FINISHED: sleeping for 1 seconds to test async code!")
 
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
@@ -243,12 +212,8 @@ RegistryContract_Registered_handlerAsync(async ({ event, context }) => {
   context.Registered.set(registeredEntity);
 });
 
-RegistryContract_Settled_loader(({ event, context }) => {
-  context.EventsSummary.load(GLOBAL_EVENTS_SUMMARY_KEY);
-});
-
 RegistryContract_Settled_handlerAsync(async ({ event, context }) => {
-  let summary = context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
+  let summary = await context.EventsSummary.get(GLOBAL_EVENTS_SUMMARY_KEY);
 
   let currentSummaryEntity: EventsSummaryEntity =
     summary ?? INITIAL_EVENTS_SUMMARY;
