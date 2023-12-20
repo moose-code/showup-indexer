@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       envio:
-        specifier: 0.0.25
-        version: 0.0.25
+        specifier: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
+        version: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@20.8.8)(typescript@5.2.2)
@@ -457,37 +457,28 @@ packages:
       once: 1.4.0
     dev: false
 
-  /envio-darwin-arm64@0.0.25:
-    resolution: {integrity: sha512-/d57bTf/4yLaJyqNDUFcTXvNYx33QMd2223YG1yJ6n921DVHvVvlQor8j5kTcaRE4Efd58WwQ74V0kmt8F9gVg==}
+  /envio-darwin-arm64@0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d:
+    resolution: {integrity: sha512-c8e09/iy6QrYW57pWnfdy36IjQBxXnzF0CwMdmjcsHMVlnw42VVmAeTB7/mGWzw4IVR+tFMJ+ahtP/ibzGWOBw==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /envio-darwin-x64@0.0.25:
-    resolution: {integrity: sha512-GuRiC0v4vNTC2t7bWE+FlDWYZGqRAVLxBaVKd+QaOe9RLcbdX0llRodXk3uki4aq9HNmUErN7GauwCmvdTndpg==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /envio-linux-x64@0.0.25:
-    resolution: {integrity: sha512-1ELt3g3xiOTtaATqRAK1KfR4KFL//B71WTGlnUEDXB3wSgC63W61y3eF9BZsZC7LdNaipypoDGGAKANpDqEapw==}
+  /envio-linux-x64@0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d:
+    resolution: {integrity: sha512-ROOfN7lzdvk+KscUEdMn1er3JeRHXpnsUliW8Bqx9Nasj5r7p4TABEA2b3ljEyLdiAwHWhzGyw4Na4AdnS3+ag==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /envio@0.0.25:
-    resolution: {integrity: sha512-/4HAn4iURf5DkTA12KkZfHy86kIrTNgJbSrU7RF2tEV+gjsUiTxgiT13CEai+T/Mw4353PVWZ6AuKMmrjWqY6Q==}
+  /envio@0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d:
+    resolution: {integrity: sha512-GLnH4dBotdFw9JqRfSbSx1c8O1lS2z4zJudux5ayLdO28d5yYHkQr7NO1Fy5udpAGxURVJbDJixYKy5PetehFQ==}
     hasBin: true
     optionalDependencies:
-      envio-darwin-arm64: 0.0.25
-      envio-darwin-x64: 0.0.25
-      envio-linux-x64: 0.0.25
+      envio-darwin-arm64: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
+      envio-linux-x64: 0.0.0-force-npm-publish-async-handlers-20231220070017-64504c7d
     dev: false
 
   /escalade@3.1.1:
